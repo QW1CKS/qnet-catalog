@@ -1,0 +1,7 @@
+schema_version: 1
+catalog_version: 1
+publisher_id: QW1CKS
+update_urls:
+  - https://raw.githubusercontent.com/QW1CKS/qnet-catalog/main/catalog.json
+seed_fallback_urls:
+  - https://raw.githubusercontent.com/QW1CKS/qnet-catalog/main/catalog.json

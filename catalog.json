@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "catalog_version": 1,
+  "generated_at": "2025-09-25T06:58:42.431160900Z",
+  "expires_at": "2025-10-02T06:58:42.431160900Z",
+  "publisher_id": "QW1CKS",
+  "update_urls": [
+    "https://raw.githubusercontent.com/QW1CKS/qnet-catalog/main/catalog.json"
+  ],
+  "seed_fallback_urls": [
+    "https://raw.githubusercontent.com/QW1CKS/qnet-catalog/main/catalog.json"
+  ],
+  "entries": [
+    {
+      "id": "cf1",
+      "host": "www.cloudflare.com",
+      "ports": [
+        443
+      ],
+      "protocols": [
+        "tls"
+      ],
+      "alpn": [
+        "h2",
+        "http/1.1"
+      ],
+      "region": [
+        "global"
+      ],
+      "weight": 1,
+      "health_path": null,
+      "tls_profile": null,
+      "quic_hints": null
+    }
+  ],
+  "signature_hex": "8a6f3c9678df24b3c8653aa7c609ae32af0d4e978d5bc68faae1a3a2dee7c417b5c20ac5071afd3a6d57d5554925ad44640e88124755f108f24b5646c631620d"
+}

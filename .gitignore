@@ -1,0 +1,4 @@
+target/
+dist/
+catalog_privkey.hex
+*priv*.hex

@@ -1,0 +1,10 @@
+schema_version: 1
+publisher_id: QW1CKS
+entries:
+  - id: cf1
+    host: www.cloudflare.com
+    ports: [443]
+    protocols: ["tls"]
+    alpn: ["h2","http/1.1"]
+    region: ["global"]
+    weight: 1
