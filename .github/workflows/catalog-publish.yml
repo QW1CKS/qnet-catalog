@@ -1,0 +1,59 @@
+name: Catalog Sign
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "templates/**"
+      - ".github/workflows/catalog-publish.yml"
+  workflow_dispatch: {}
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout qnet tools
+        uses: actions/checkout@v4
+        with:
+          repository: QW1CKS/qnet
+          path: qnet
+          fetch-depth: 1
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+
+      - name: Build signer
+        working-directory: qnet
+        run: cargo build -q -p catalog-signer
+
+      - name: Sign (inline)
+        env:
+          CATALOG_PRIVKEY: ${{ secrets.CATALOG_PRIVKEY }}
+        run: |
+          ./qnet/target/debug/catalog-signer sign \
+            --decoys templates/decoys.yml \
+            --meta templates/catalog.meta.yml \
+            --out catalog.json \
+            --inline
+
+      - name: Verify
+        run: ./qnet/target/debug/catalog-signer verify --catalog catalog.json --pubkey-file keys/publisher.pub
+
+      - name: Commit if changed
+        run: |
+          git config user.name "catalog-bot"
+          git config user.email "catalog-bot@users.noreply.github.com"
+          git add catalog.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "ci: update signed catalog"
+            git push
+          fi
