@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "catalog_version": 1,
-  "generated_at": "2025-09-25T06:58:42.431160900Z",
-  "expires_at": "2025-10-02T06:58:42.431160900Z",
+  "generated_at": "2025-09-25T07:31:00.698220600Z",
+  "expires_at": "2025-10-02T07:31:00.698220600Z",
   "publisher_id": "QW1CKS",
   "update_urls": [
     "https://raw.githubusercontent.com/QW1CKS/qnet-catalog/main/catalog.json"
@@ -33,5 +33,5 @@
       "quic_hints": null
     }
   ],
-  "signature_hex": "8a6f3c9678df24b3c8653aa7c609ae32af0d4e978d5bc68faae1a3a2dee7c417b5c20ac5071afd3a6d57d5554925ad44640e88124755f108f24b5646c631620d"
+  "signature_hex": "506bd7c34fe4f2ca4f90612558d4c32808e574f7ef76c03488b991597844a5f50b79238f17f10484c83ca6ad93141d4d2858ef85acbd8bfeefd01dfa52dcf805"
 }
