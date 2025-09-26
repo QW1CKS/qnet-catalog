@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "catalog_version": 1,
-  "generated_at": "2025-09-26T12:41:08.138080200Z",
-  "expires_at": "2025-10-03T12:41:08.138080200Z",
+  "generated_at": "2025-09-26T15:16:27.418034800Z",
+  "expires_at": "2025-10-03T15:16:27.418034800Z",
   "publisher_id": "QW1CKS",
   "update_urls": [
     "https://raw.githubusercontent.com/QW1CKS/qnet-catalog/refs/heads/main/catalog.json"
@@ -12,13 +12,35 @@
   ],
   "entries": [
     {
-      "id": "cf1",
-      "host": "www.cloudflare.com",
+      "id": "ggle-01",
+      "host": "www.google.com",
       "ports": [
         443
       ],
       "protocols": [
-        "tls"
+        "tcp",
+        "quic"
+      ],
+      "alpn": [
+        "h2",
+        "h3"
+      ],
+      "region": [
+        "global"
+      ],
+      "weight": 10,
+      "health_path": "/",
+      "tls_profile": "chrome-like-2025q3",
+      "quic_hints": null
+    },
+    {
+      "id": "amz-01",
+      "host": "www.amazon.com",
+      "ports": [
+        443
+      ],
+      "protocols": [
+        "tcp"
       ],
       "alpn": [
         "h2",
@@ -27,11 +49,54 @@
       "region": [
         "global"
       ],
-      "weight": 1,
-      "health_path": null,
-      "tls_profile": null,
+      "weight": 6,
+      "health_path": "/",
+      "tls_profile": "chrome-like-2025q3",
+      "quic_hints": null
+    },
+    {
+      "id": "wiki-01",
+      "host": "www.wikipedia.org",
+      "ports": [
+        443
+      ],
+      "protocols": [
+        "tcp",
+        "quic"
+      ],
+      "alpn": [
+        "h2",
+        "h3"
+      ],
+      "region": [
+        "global"
+      ],
+      "weight": 4,
+      "health_path": "/",
+      "tls_profile": "chrome-like-2025q3",
+      "quic_hints": null
+    },
+    {
+      "id": "g2a-01",
+      "host": "www.g2a.com",
+      "ports": [
+        443
+      ],
+      "protocols": [
+        "tcp"
+      ],
+      "alpn": [
+        "h2",
+        "http/1.1"
+      ],
+      "region": [
+        "global"
+      ],
+      "weight": 3,
+      "health_path": "/",
+      "tls_profile": "chrome-like-2025q3",
       "quic_hints": null
     }
   ],
-  "signature_hex": "9d0267374741c6ec1bf520faa88209ac682a06c5f1e24e0efc7b39bc9b6dbf8a49b62d23e1a379e721adabc749f5d608c8601729508a69554091025df816540f"
+  "signature_hex": "9fea3d6e8728dad3e35096fb517ed9fce37748180169645e46340e89c551d64ab13aec60c00c3b39703e993a45f1703f687cc590f0a2c37a6c981f19ec482d03"
 }
